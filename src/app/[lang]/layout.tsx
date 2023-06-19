@@ -1,10 +1,12 @@
 import '@/styles/globals.css';
 import { type Metadata } from 'next';
 import { type ReactNode } from 'react';
-import { siteConfig } from '@/config/site';
+import { siteConfig } from '@/configs/site';
 import { fontSans } from '@/lib/fonts';
+import { locales } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/providers/theme-provider';
+import type { LocaleType } from '@/data-types/types';
 
 export const metadata: Metadata = {
   title: {
@@ -23,11 +25,16 @@ export const metadata: Metadata = {
 
 interface Props {
   children: ReactNode;
+  params: { lang: LocaleType };
 }
 
-export default function RootLayout({ children }: Props) {
+export function generateStaticParams() {
+  return locales.map(locale => ({ locale }));
+}
+
+export default function RootLayout({ children, params }: Props) {
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <head />
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
