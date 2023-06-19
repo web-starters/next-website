@@ -1,9 +1,9 @@
 import { type Metadata } from 'next';
 import { getDictionary } from '@/lib/dictionaries';
-import type { LocaleType } from '@/data-types/types';
+import { type Locale } from '@/i18n-config';
 
 interface Props {
-  params: { lang: LocaleType };
+  params: { lang: Locale };
 }
 
 export const metadata: Metadata = {

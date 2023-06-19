@@ -1,8 +1,9 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { locales } from '@/lib/constants';
+import { i18n } from './i18n-config';
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const { locales } = i18n;
   const pathnameIsMissingLocale = locales.every(
     locale => !pathname.startsWith(`/${locale}`) && pathname !== `/${locale}`,
   );

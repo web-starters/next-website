@@ -1,12 +1,11 @@
 import '@/styles/globals.css';
 import { type Metadata } from 'next';
 import { type ReactNode } from 'react';
+import { i18n, type Locale } from '@/i18n-config';
 import { siteConfig } from '@/configs/site';
 import { fontSans } from '@/lib/fonts';
-import { locales } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/providers/theme-provider';
-import type { LocaleType } from '@/data-types/types';
 
 export const metadata: Metadata = {
   title: {
@@ -25,11 +24,11 @@ export const metadata: Metadata = {
 
 interface Props {
   children: ReactNode;
-  params: { lang: LocaleType };
+  params: { lang: Locale };
 }
 
 export function generateStaticParams() {
-  return locales.map(locale => ({ locale }));
+  return i18n.locales.map(locale => ({ locale }));
 }
 
 export default function RootLayout({ children, params }: Props) {
