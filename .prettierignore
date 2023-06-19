@@ -1,0 +1,8 @@
+# default
+node_modules
+pnpm-lock.yaml
+logs
+*.log
+
+# custom
+.next
