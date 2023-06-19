@@ -11,6 +11,7 @@
     "format": "prettier --write \"**/*.{html,css,scss,js,cjs,mjs,jsx,ts,tsx}\""
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.4.0",
     "@headlessui/react": "^1.7.15",
     "@hookform/resolvers": "^3.1.0",
     "@radix-ui/react-avatar": "^1.0.3",
@@ -22,8 +23,8 @@
     "@radix-ui/react-switch": "^1.0.3",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
-    "js-cookie": "^3.0.5",
     "lucide-react": "^0.241.0",
+    "negotiator": "^0.6.3",
     "next": "13.4.4",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
@@ -36,7 +37,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@types/js-cookie": "^3.0.3",
+    "@types/negotiator": "^0.6.1",
     "@types/node": "^20.2.5",
     "@types/prettier": "^2.7.3",
     "@types/react": "^18.2.7",
