@@ -2,7 +2,7 @@ import '@/styles/globals.css';
 import { type Metadata } from 'next';
 import { type ReactNode } from 'react';
 import { i18n, type Locale } from '@/i18n-config';
-import { siteConfig } from '@/configs/site';
+import { siteConfig } from '@/configs/site-config';
 import { fontSans } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/providers/theme-provider';
