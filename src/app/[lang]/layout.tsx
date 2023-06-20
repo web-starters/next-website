@@ -6,6 +6,8 @@ import { siteConfig } from '@/configs/site-config';
 import { fontSans } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/providers/theme-provider';
+import { Header } from '@/components/organisms/header';
+import { Footer } from '@/components/organisms/footer';
 
 export const metadata: Metadata = {
   title: {
@@ -37,7 +39,11 @@ export default function RootLayout({ children, params }: Props) {
       <head />
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <Header />
+
+          <main>{children}</main>
+
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
