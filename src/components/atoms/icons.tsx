@@ -1,4 +1,4 @@
-import { type LucideProps, type Icon as LucideIcon, X, Menu } from 'lucide-react';
+import { type LucideProps, type Icon as LucideIcon, X, Menu, Sun, Moon } from 'lucide-react';
 
 export type Icon = LucideIcon;
 
@@ -15,6 +15,8 @@ export const Icons = {
       />
     </svg>
   ),
-  x: (props: LucideProps) => <X {...props} />,
-  menu: (props: LucideProps) => <Menu {...props} />,
+  x: X,
+  menu: Menu,
+  sun: Sun,
+  moon: Moon,
 };
