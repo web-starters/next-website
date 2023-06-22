@@ -1,5 +1,6 @@
 import { getDictionary } from '@/lib/dictionaries';
 import { type Locale } from '@/i18n-config';
+import { Heading } from '@/components/atoms/heading';
 
 interface Props {
   params: { lang: Locale };
@@ -8,5 +9,5 @@ interface Props {
 export default async function Page({ params }: Props) {
   const dict = await getDictionary(params.lang);
 
-  return <h2>{dict['greeting']}</h2>;
+  return <Heading>{dict['greeting']}</Heading>;
 }
