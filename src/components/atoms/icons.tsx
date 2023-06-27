@@ -1,4 +1,12 @@
-import { type LucideProps, type Icon as LucideIcon, X, Menu, Sun, Moon } from 'lucide-react';
+import {
+  type LucideProps,
+  type Icon as LucideIcon,
+  X,
+  Menu,
+  Sun,
+  Moon,
+  Languages,
+} from 'lucide-react';
 
 export type Icon = LucideIcon;
 
@@ -19,4 +27,5 @@ export const Icons = {
   menu: Menu,
   sun: Sun,
   moon: Moon,
+  languages: Languages,
 };
