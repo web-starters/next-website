@@ -1,4 +1,5 @@
 import { Icons } from '@/components/atoms/icons';
+import { LocaleToggle } from '../molecules/locale-toggle';
 import { ThemeToggle } from '@/components/molecules/theme-toggle';
 
 export function Header() {
@@ -7,7 +8,10 @@ export function Header() {
       <div className="flex justify-between items-center w-full max-w-7xl mx-auto space-x-10">
         <Icons.logo className="w-20 h-6" />
 
-        <ThemeToggle />
+        <div className="flex gap-4">
+          <LocaleToggle />
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
