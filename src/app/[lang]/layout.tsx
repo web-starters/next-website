@@ -15,10 +15,6 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
   icons: {
     icon: '/images/favicon.ico',
   },
@@ -38,7 +34,12 @@ export default function RootLayout({ children, params }: Props) {
     <html lang={params.lang}>
       <head />
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Header />
 
           <main>{children}</main>

@@ -1,14 +1,4 @@
-import {
-  type LucideProps,
-  type Icon as LucideIcon,
-  X,
-  Menu,
-  Sun,
-  Moon,
-  Languages,
-} from 'lucide-react';
-
-export type Icon = LucideIcon;
+import { type LucideProps, X, Menu, Sun, Moon, Languages } from 'lucide-react';
 
 export const Icons = {
   logo: (props: LucideProps) => (
