@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 interface Props {
   children: ReactNode;
-  params: { lang: Locale };
+  params: { locale: Locale };
 }
 
 export function generateStaticParams() {
@@ -31,7 +31,7 @@ export function generateStaticParams() {
 
 export default function RootLayout({ children, params }: Props) {
   return (
-    <html lang={params.lang}>
+    <html lang={params.locale}>
       <head />
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
         <ThemeProvider
