@@ -5,10 +5,10 @@ import { i18n } from '@/i18n-config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();
-  const { APP_URL } = env;
+  const { NEXT_PUBLIC_APP_URL } = env;
 
   return i18n.locales.map(locale => ({
-    url: `${APP_URL}/${locale}`,
+    url: `${NEXT_PUBLIC_APP_URL}/${locale}`,
     lastModified: currentDate,
   }));
 }
