@@ -4,6 +4,7 @@ import { type Metadata } from 'next';
 import { type ReactNode } from 'react';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
 import { i18n, type Locale } from '@/i18n-config';
 import { siteConfig } from '@/configs/site-config';
@@ -35,6 +36,7 @@ export function generateStaticParams() {
 }
 
 export default function RootLayout({ children, params }: Props) {
+  if (!i18n.locales.includes(params.locale)) notFound();
   unstable_setRequestLocale(params.locale);
   const messages = useMessages();
 
