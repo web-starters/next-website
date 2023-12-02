@@ -6,11 +6,14 @@
  */
 !process.env.SKIP_ENV_VALIDATION && (await import('./src/env.mjs'));
 
+import withNextIntl from 'next-intl/plugin';
+
 /** @type {import("next").NextConfig} */
-const config = {
+const config = withNextIntl()({
   reactStrictMode: true,
   swcMinify: true,
   productionBrowserSourceMaps: true,
-};
+  output: 'export',
+});
 
 export default config;

@@ -1,13 +1,9 @@
-import { getDictionary } from '@/lib/dictionaries';
-import { type Locale } from '@/i18n-config';
+import { useTranslations } from 'next-intl';
+
 import { Heading } from '@/components/atoms/heading';
 
-interface Props {
-  params: { locale: Locale };
-}
+export default function Page() {
+  const t = useTranslations('Index');
 
-export default async function Page({ params }: Props) {
-  const dict = await getDictionary(params.locale);
-
-  return <Heading>{dict['greeting']}</Heading>;
+  return <Heading>{t('title')}</Heading>;
 }
