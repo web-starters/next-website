@@ -1,4 +1,5 @@
 import { type MetadataRoute } from 'next';
+
 import { env } from '@/env.mjs';
 import { i18n } from '@/i18n-config';
 
