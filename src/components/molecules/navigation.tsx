@@ -1,8 +1,6 @@
 'use client';
 
-import Link from 'next/link';
-
-import { useLocale } from '@/hooks/useLocale';
+import { Link, type Pathname } from '@/lib/navigation';
 
 import {
   NavigationMenu,
@@ -12,9 +10,9 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/atoms/navigation-menu';
 
-type NavigationItem = {
+export type NavigationItem = {
   name: string;
-  link: string;
+  link: Pathname;
 };
 
 interface NavigationProps {
@@ -22,14 +20,12 @@ interface NavigationProps {
 }
 
 export function Navigation({ items }: NavigationProps) {
-  const { locale } = useLocale();
-
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
           {items.map((item, index) => (
-            <Link key={index} href={`/${locale + item.link}`} legacyBehavior passHref>
+            <Link key={index} href={item.link} legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 {item.name}
               </NavigationMenuLink>

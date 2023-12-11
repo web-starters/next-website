@@ -1,9 +1,9 @@
 import { Icons } from '@/components/atoms/icons';
-import { LocaleToggle } from '../molecules/locale-toggle';
+import { LocaleToggle } from '@/components/molecules/locale-toggle';
 import { ThemeToggle } from '@/components/molecules/theme-toggle';
-import { Navigation } from '@/components/molecules/navigation';
+import { Navigation, type NavigationItem } from '@/components/molecules/navigation';
 
-const navigationItems = [
+const navigationItems: NavigationItem[] = [
   { name: 'Homepage', link: '/' },
   { name: 'About', link: '/about' },
 ];

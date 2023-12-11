@@ -6,14 +6,14 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-import { i18n, type Locale } from '@/i18n-config';
 import { siteConfig } from '@/configs/site-config';
 import { fontSans } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
+import { type Locale, locales } from '@/lib/navigation';
 
-import { ThemeProvider } from '@/providers/theme-provider';
 import { Header } from '@/components/organisms/header';
 import { Footer } from '@/components/organisms/footer';
+import ThemeProvider from '@/components/providers/ThemeProvider';
 
 export const metadata: Metadata = {
   title: {
@@ -32,11 +32,11 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return i18n.locales.map(locale => ({ locale }));
+  return locales.map(locale => ({ locale }));
 }
 
 export default function RootLayout({ children, params }: Props) {
-  if (!i18n.locales.includes(params.locale)) notFound();
+  if (!locales.includes(params.locale)) notFound();
   unstable_setRequestLocale(params.locale);
   const messages = useMessages();
 
