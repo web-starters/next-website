@@ -53,7 +53,9 @@ export default function RootLayout({ children, params }: Props) {
           >
             <Header />
 
-            <main>{children}</main>
+            <main className="w-full min-h-[calc(100vh-192px)] md:min-h-[calc(100vh-142px)] px-5 py-8">
+              {children}
+            </main>
 
             <Footer />
           </ThemeProvider>

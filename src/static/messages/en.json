@@ -1,5 +1,14 @@
 {
-  "Index": {
-    "title": "Hello world!"
+  "global": {},
+  "layout": {
+    "homepage": "Home page",
+    "about": "About",
+    "privacy_policy_and_cookies": "Privacy Policy and Cookies"
+  },
+  "homepage": {
+    "title": "Home page"
+  },
+  "about": {
+    "title": "About"
   }
 }

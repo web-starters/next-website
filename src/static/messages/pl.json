@@ -1,5 +1,14 @@
 {
-  "Index": {
-    "title": "Witaj Świecie!"
+  "global": {},
+  "layout": {
+    "homepage": "Strona główna",
+    "about": "O nas",
+    "privacy_policy_and_cookies": "Polityka Prywatności i Cookies"
+  },
+  "homepage": {
+    "title": "Strona główna"
+  },
+  "about": {
+    "title": "O nas"
   }
 }
